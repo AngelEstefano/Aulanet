@@ -1,0 +1,764 @@
+/* GestionAsistencia.css (modificaciones específicas) */
+.pestaña-asistencia {
+  padding: 1rem;
+}
+
+.alerta-moderna {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 3000;
+  animation: deslizarEntrada 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 400px;
+}
+
+.alerta-moderna.error {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  color: white;
+}
+
+.alerta-moderna.advertencia {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: white;
+}
+
+@keyframes deslizarEntrada {
+  0% { transform: translateX(100%) scale(0.8); opacity: 0; }
+  70% { transform: translateX(-10px) scale(1.05); }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+/* Modal Comentario */
+.superposicion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-comentario, .modal-eliminar {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-eliminar {
+  text-align: center;
+  max-width: 450px;
+}
+
+.icono-alerta-eliminar {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.modal-eliminar h3 {
+  color: #EF4444;
+  margin-bottom: 1rem;
+}
+
+.modal-eliminar p {
+  color: #6B7280;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.cerrar-modal-x {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+.vista-comentario, .vista-edicion-comentario {
+  margin-top: 1rem;
+}
+
+.comentario-guardado {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+.grupo-formulario {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.entrada-texto {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #1C1F33;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contador-caracteres {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #6B7280;
+  margin-top: 0.5rem;
+}
+
+.acciones-modal {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.acciones-modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.acciones-modal button.secundario {
+  background: #6B7280;
+  color: white;
+}
+
+.acciones-modal button.primario {
+  background: #C0A062;
+  color: #1C1F33;
+}
+
+.acciones-modal button.peligro {
+  background: #EF4444;
+  color: white;
+}
+
+/* Modal Grupo */
+.modal-grupo {
+  max-width: 600px;
+}
+
+.seleccion-estudiantes-contenedor {
+  border: 2px solid #1C1F33;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #f8f9fa;
+}
+
+.encabezado-seleccion h4 {
+  color: #1C1F33;
+  margin: 0 0 0.8rem 0;
+}
+
+.lista-seleccion-estudiantes {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.item-seleccion-estudiante {
+  padding: 0.5rem 0;
+}
+
+.item-seleccion-estudiante label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.sin-estudiantes {
+  text-align: center;
+  padding: 1rem;
+  color: #6B7280;
+  font-style: italic;
+}
+
+/* Encabezado Unificado */
+.encabezado-unificado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(135deg, #1C1F33 0%, #2D3748 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.titulo-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contador-dias-destacado {
+  background: #C0A062;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.estadisticas-asistencia {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.estadistica-item {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.estadistica-item.presente { background: #10B981; }
+.estadistica-item.tarde { background: #F59E0B; }
+.estadistica-item.falta { background: #EF4444; }
+
+.controles-grupos {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.boton-grupos {
+  background: #C0A062;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Lista de EQUIPOS */
+.lista-equipos {
+  margin-bottom: 1rem;
+}
+
+.contenedor-equipos {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tarjeta-equipo {
+  background: white;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border-left: 3px solid;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
+
+.encabezado-equipo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.nombre-equipo {
+  font-weight: 700;
+  color: #1C1F33;
+  font-size: 0.75rem;
+}
+
+.boton-eliminar-equipo {
+  background: #EF4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.6rem;
+}
+
+.lista-integrantes-equipo-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.integrante-equipo-vertical {
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  border-left: 2px solid #1C1F33;
+}
+
+.controles-equipos {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.boton-equipos {
+  background: #C0A062;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-equipo {
+  max-width: 600px;
+}
+
+/* Tabla Asistencia - Scroll Silencioso CON NAVEGACIÓN MEJORADA */
+.contenedor-tabla-scroll.scroll-silencioso {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  cursor: default;
+  
+  /* Mejorar el rendimiento del scroll */
+  will-change: scroll-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.contenedor-tabla-scroll.scroll-silencioso::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.contenedor-tabla-scroll.scroll-silencioso {
+  /* Scroll más rápido y responsive */
+  scroll-behavior: auto; /* Cambiado de 'smooth' a 'auto' para mayor velocidad */
+  overscroll-behavior-x: contain;
+}
+
+/* Asegurar que la tabla tenga el ancho suficiente para scroll */
+.tabla-asistencia-unificada {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  min-width: min-content;
+  width: max-content; /* Importante para el scroll horizontal */
+}
+
+.tabla-asistencia-unificada {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  min-width: min-content;
+}
+
+.encabezado-tabla-unificada {
+  display: flex;
+  background-color: #1C1F33;
+  color: white;
+  min-height: 40px;
+  min-width: min-content;
+}
+
+/* NUEVA ESTRUCTURA - Columna combinada Estudiante + Acciones */
+.columna-estudiante-acciones {
+  display: flex;
+  width: 280px; /* Ancho total combinado */
+  min-width: 280px;
+  border-right: 1px solid #2D3748;
+}
+
+.subcolumna-estudiante {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #2D3748;
+}
+
+.subcolumna-acciones {
+  width: 100px;
+  min-width: 100px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dias-asistencia {
+  display: flex;
+  flex: 1;
+  min-width: min-content;
+}
+
+.encabezado-fecha-unificada {
+  flex: 0 0 60px;
+  padding: 0.3rem 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #2D3748;
+  min-height: 50px;
+  min-width: 60px;
+}
+
+.dia-corto-fecha {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #C0A062;
+  text-transform: uppercase;
+}
+
+.numero-fecha-negrita {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.mes-corto-fecha {
+  font-size: 0.6rem;
+  color: #e2e8f0;
+  text-transform: uppercase;
+}
+
+.cuerpo-tabla-unificada {
+  display: flex;
+  flex-direction: column;
+  min-width: min-content;
+}
+
+.fila-estudiante-unificada {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+  min-height: 40px;
+  min-width: min-content;
+}
+
+.fila-estudiante-unificada.par { background-color: #f9fafb; }
+.fila-estudiante-unificada.impar { background-color: #ffffff; }
+
+/* NUEVA ESTRUCTURA - Celda combinada Estudiante + Acciones */
+.celda-estudiante-acciones {
+  display: flex;
+  width: 280px;
+  min-width: 280px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.celda-info-estudiante {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e5e7eb;
+}
+
+.nombre-estudiante {
+  font-weight: 600;
+  color: #1C1F33;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.indicador-faltas {
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.celda-acciones {
+  width: 100px;
+  min-width: 100px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.celdas-asistencia {
+  display: flex;
+  flex: 1;
+  min-width: min-content;
+}
+
+.celda-asistencia-unificada {
+  flex: 0 0 60px;
+  padding: 0.2rem 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e5e7eb;
+  min-width: 60px;
+}
+
+.contenedor-selector-asistencia {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selector-asistencia-unificado {
+  width: 100%;
+  padding: 0.3rem 0.1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+  min-height: 30px;
+  appearance: none;
+}
+
+.contenedor-pestana-comentario {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  z-index: 10;
+}
+
+.pestana-comentario {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pestana-comentario.agregar {
+  background: #6B7280;
+  color: white;
+}
+
+.pestana-comentario.guardado {
+  background: #8B5CF6;
+  color: white;
+}
+
+/* Botones de acción */
+.boton-accion {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-accion.editar { background: #1C1F33; }
+.boton-accion.eliminar { background: #EF4444; }
+
+.boton-accion img {
+  width: 12px;
+  height: 12px;
+  filter: brightness(0) invert(1);
+}
+
+.sin-datos {
+  text-align: center;
+  padding: 3rem;
+  color: #1C1F33;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #cbd5e0;
+}
+
+/* Estilos de botones unificados */
+.acciones-modal button,
+.boton-grupos,
+.boton-accion {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.acciones-modal button:hover,
+.boton-grupos:hover,
+.boton-accion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.acciones-modal button:active,
+.boton-grupos:active,
+.boton-accion:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones específicos */
+.acciones-modal button.secundario {
+  background: #6B7280;
+  color: white;
+}
+
+.acciones-modal button.primario {
+  background: #C0A062;
+  color: #1C1F33;
+}
+
+.acciones-modal button.peligro {
+  background: #EF4444;
+  color: white;
+}
+
+.boton-grupos {
+  background: #C0A062;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Botón eliminar grupo */
+.boton-eliminar-grupo {
+  background: #EF4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.6rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+
+.boton-eliminar-grupo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.boton-eliminar-grupo:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.boton-eliminar-grupo img {
+  width: 8px;
+  height: 8px;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .encabezado-unificado {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .columna-estudiante-acciones {
+    width: 220px;
+    min-width: 220px;
+  }
+  
+  .celda-estudiante-acciones {
+    width: 220px;
+    min-width: 220px;
+  }
+  
+  .celda-acciones {
+    width: 80px;
+    min-width: 80px;
+  }
+  
+  .subcolumna-acciones {
+    width: 80px;
+    min-width: 80px;
+  }
+}
+
+.boton-eliminar-equipo {
+  background: #EF4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.6rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+
+.boton-eliminar-equipo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.boton-eliminar-equipo:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.boton-eliminar-equipo img {
+  width: 10px;
+  height: 10px;
+  filter: brightness(0) invert(1);
+}
